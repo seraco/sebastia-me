@@ -7,7 +7,7 @@ interface IProps {
 function Text(props: IProps) {
     return (
         <div className="Text flex">
-            {props.text}
+            <p>{props.text}</p>
         </div>
     );
 }

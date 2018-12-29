@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
+import texts from './text/about.json';
 import Section, { ISection } from './Section';
 
 
@@ -12,19 +13,31 @@ class App extends Component {
     this.sections = [
       {
         order: 0,
-        text: 'Hello, this is a test!',
+        text: texts.intro.join(),
         src: 'seb.jpg',
         alt: 'seb'
       },
       {
         order: 1,
-        text: 'Hello, this is a test!',
+        text: texts.studies.join(),
         src: 'climbing.jpeg',
         alt: 'climbing'
       },
       {
         order: 0,
-        text: 'Hello, this is a test!',
+        text: texts.coding.join(),
+        src: 'climbing.jpeg',
+        alt: 'climbing'
+      },
+      {
+        order: 1,
+        text: texts.work.join(),
+        src: 'climbing.jpeg',
+        alt: 'climbing'
+      },
+      {
+        order: 0,
+        text: texts.sport.join(),
         src: 'climbing.jpeg',
         alt: 'climbing'
       }
