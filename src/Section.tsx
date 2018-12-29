@@ -5,6 +5,7 @@ import Image from './Image';
 
 export interface ISection {
     order: number;
+    title: string;
     text: string;
     src: string;
     alt: string;
@@ -13,7 +14,7 @@ export interface ISection {
 function Section(props: ISection) {
     return (
         <div className={"Section " + (props.order ? 'row' : 'row-reverse')}>
-            <Text text={props.text}></Text>
+            <Text title={props.title} text={props.text}></Text>
             <Image src={props.src} alt={props.alt}></Image>
         </div>
     );

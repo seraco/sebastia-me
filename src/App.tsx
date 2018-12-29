@@ -13,31 +13,22 @@ class App extends Component {
     this.sections = [
       {
         order: 0,
-        text: texts.intro.join(),
+        title: texts.heading.join(''),
+        text: texts.intro.join('') + ' ' + texts.studies.join(''),
         src: 'seb.jpg',
         alt: 'seb'
       },
       {
         order: 1,
-        text: texts.studies.join(),
-        src: 'climbing.jpeg',
+        title: '',
+        text: texts.coding.join(''),
+        src: 'coding.jpeg',
         alt: 'climbing'
       },
       {
         order: 0,
-        text: texts.coding.join(),
-        src: 'climbing.jpeg',
-        alt: 'climbing'
-      },
-      {
-        order: 1,
-        text: texts.work.join(),
-        src: 'climbing.jpeg',
-        alt: 'climbing'
-      },
-      {
-        order: 0,
-        text: texts.sport.join(),
+        title: '',
+        text: texts.work.join('') + ' ' + texts.sport.join(''),
         src: 'climbing.jpeg',
         alt: 'climbing'
       }
@@ -48,6 +39,7 @@ class App extends Component {
     let sects = this.sections.map(el =>
       <Section
         order={el.order}
+        title={el.title}
         text={el.text}
         src={el.src}
         alt={el.alt}>
