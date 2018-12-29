@@ -4,12 +4,18 @@ import './App.css';
 import texts from './text/about.json';
 import Section, { ISection } from './Section';
 
+interface IState {
+  width: number;
+  height: number;
+}
 
 class App extends Component {
+  state: IState;
   sections: Array<ISection>;
 
   constructor(props: any) {
     super(props);
+    this.state = { width: 0, height: 0 };
     this.sections = [
       {
         order: 0,
@@ -19,7 +25,7 @@ class App extends Component {
         alt: 'seb'
       },
       {
-        order: 1,
+        order: 0,
         title: '',
         text: texts.coding.join(''),
         src: 'coding.jpeg',
@@ -33,12 +39,28 @@ class App extends Component {
         alt: 'climbing'
       }
     ];
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   render() {
-    let sects = this.sections.map(el =>
+    let ratio = this.state.width / this.state.height;
+    let orient = ratio > 1 ? 'landscape' : 'portrait';
+    let sects = this.sections.map((el, idx) =>
       <Section
-        order={el.order}
+        order={orient === 'landscape' ? idx % 2 : 0}
         title={el.title}
         text={el.text}
         src={el.src}

@@ -13,7 +13,7 @@ export interface ISection {
 
 function Section(props: ISection) {
     return (
-        <div className={"Section " + (props.order ? 'row' : 'row-reverse')}>
+        <div className={"Section " + (props.order ? 'direct' : 'reverse')}>
             <Text title={props.title} text={props.text}></Text>
             <Image src={props.src} alt={props.alt}></Image>
         </div>

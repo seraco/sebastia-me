@@ -9,7 +9,7 @@ function Text(props: IProps) {
     return (
         <div className="Text flex">
             <div className="text-content">
-                <h1>{props.title}</h1>
+                <h1 className="title">{props.title}</h1>
                 <p className="paragraph">{props.text}</p>
             </div>
         </div>
