@@ -1,25 +1,48 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import Section, { ISection } from './Section';
+
 
 class App extends Component {
+  sections: Array<ISection>;
+
+  constructor(props: any) {
+    super(props);
+    this.sections = [
+      {
+        order: 0,
+        text: 'Hello, this is a test!',
+        src: 'climbing.jpeg',
+        alt: 'climbing'
+      },
+      {
+        order: 1,
+        text: 'Hello, this is a test!',
+        src: 'climbing.jpeg',
+        alt: 'climbing'
+      },
+      {
+        order: 0,
+        text: 'Hello, this is a test!',
+        src: 'climbing.jpeg',
+        alt: 'climbing'
+      }
+    ];
+  }
+
   render() {
+    let sects = this.sections.map(el =>
+      <Section
+        order={el.order}
+        text={el.text}
+        src={el.src}
+        alt={el.alt}>
+      </Section>
+    );
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        {sects}
       </div>
     );
   }
