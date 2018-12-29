@@ -13,8 +13,8 @@ class App extends Component {
       {
         order: 0,
         text: 'Hello, this is a test!',
-        src: 'climbing.jpeg',
-        alt: 'climbing'
+        src: 'seb.jpg',
+        alt: 'seb'
       },
       {
         order: 1,
