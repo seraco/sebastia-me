@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 interface IProps {
     title: string;
-    text: string;
+    children?: any;
 }
 
 function Text(props: IProps) {
@@ -10,7 +10,7 @@ function Text(props: IProps) {
         <div className="Text flex">
             <div className="text-content">
                 <h1 className="title">{props.title}</h1>
-                <p className="paragraph">{props.text}</p>
+                <p className="paragraph">{props.children}</p>
             </div>
         </div>
     );

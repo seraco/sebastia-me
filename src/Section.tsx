@@ -6,15 +6,15 @@ import Image from './Image';
 export interface ISection {
     order: number;
     title: string;
-    text: string;
     src: string;
     alt: string;
+    children?: any;
 }
 
 function Section(props: ISection) {
     return (
         <div className={"Section " + (props.order ? 'direct' : 'reverse')}>
-            <Text title={props.title} text={props.text}></Text>
+            <Text title={props.title}>{props.children}</Text>
             <Image src={props.src} alt={props.alt}></Image>
         </div>
     );

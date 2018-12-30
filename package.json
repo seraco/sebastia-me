@@ -2,7 +2,7 @@
   "name": "sebastia-me",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://seraco.github.io/sebastia-me",
+  "homepage": "http://sebastia.me",
   "dependencies": {
     "@types/jest": "^23.3.10",
     "@types/node": "^10.12.18",

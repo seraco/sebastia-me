@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import texts from './text/about.json';
 import Section, { ISection } from './Section';
 import Social from './Social';
+import Link from './Link';
 
 interface IState {
   width: number;
@@ -12,34 +12,10 @@ interface IState {
 
 class App extends Component {
   state: IState;
-  sections: Array<ISection>;
 
   constructor(props: any) {
     super(props);
     this.state = { width: 0, height: 0 };
-    this.sections = [
-      {
-        order: 0,
-        title: texts.heading.join(''),
-        text: texts.intro.join('') + ' ' + texts.studies.join(''),
-        src: 'seb.jpg',
-        alt: 'seb'
-      },
-      {
-        order: 0,
-        title: '',
-        text: texts.coding.join(''),
-        src: 'coding.jpeg',
-        alt: 'climbing'
-      },
-      {
-        order: 0,
-        title: '',
-        text: texts.work.join('') + ' ' + texts.sport.join(''),
-        src: 'climbing.jpeg',
-        alt: 'climbing'
-      }
-    ];
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
@@ -59,19 +35,51 @@ class App extends Component {
   render() {
     let ratio = this.state.width / this.state.height;
     let orient = ratio > 1 ? 'landscape' : 'portrait';
-    let sects = this.sections.map((el, idx) =>
-      <Section
-        key={el.src}
-        order={orient === 'landscape' ? idx % 2 : 0}
-        title={el.title}
-        text={el.text}
-        src={el.src}
-        alt={el.alt}>
-      </Section>
-    );
     return (
       <div className="App">
-        {sects}
+        <Section
+          order={orient === 'landscape' ? 0 : 0}
+          title="Hey! My name is Seb"
+          src="seb.jpg"
+          alt="seb">
+          I am an Aerospace Engineer, working to make space accessible to
+          everyone. I studied Aerospace Engineering at
+          the <Link href="https://www.upc.edu/en">Polytechnic University of
+          Catalonia</Link>. During my studies, I moved abroad to learn
+          more about different cultures and approaches to teaching. As an
+          Erasmus student, I studied at
+          the <Link href="https://www.polimi.it/en/">Polytechnic University of
+          Milan</Link>; I later undertook my MSc
+          at <Link href="https://www.imperial.ac.uk/">Imperial College
+          London</Link>.
+        </Section>
+        <Section
+          order={orient === 'landscape' ? 1 : 0}
+          title=""
+          src="coding.jpeg"
+          alt="coding">
+          I love coding! In parallel to my university studies, I expanded my
+          knowledge in Computer Science. I enjoy attending hackathons, where an
+          idea can materialise into a working project in just a few hours. I
+          have previously been fully financed in two programming
+          competitions: <Link href="http://visionhack.misis.ru/">VisionHack
+          </Link> in Moscow and <Link href="https://hackdays.fcbayern.com/">FC
+          Bayern HackDays</Link>. Additionally, I have
+          worked as a freelancer on several projects.
+        </Section>
+        <Section
+          order={orient === 'landscape' ? 0 : 0}
+          title=""
+          src="climbing.jpeg"
+          alt="climbing">
+          After completing my studies at Imperial College, I
+          joined <Link href="https://open-cosmos.com">Open Cosmos
+          Ltd</Link>. There I led the Front End development for the company,
+          focusing on creating an intuitive and robust platform. I am proficient
+          in React and Angular. During my free time, I love doing mountaineering
+          sports. If you want to join me, you’ll probably find me in the
+          mountains.
+        </Section>
         <Social></Social>
       </div>
     );
