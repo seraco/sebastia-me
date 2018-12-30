@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import texts from './text/about.json';
 import Section, { ISection } from './Section';
+import Social from './Social';
 
 interface IState {
   width: number;
@@ -60,6 +61,7 @@ class App extends Component {
     let orient = ratio > 1 ? 'landscape' : 'portrait';
     let sects = this.sections.map((el, idx) =>
       <Section
+        key={el.src}
         order={orient === 'landscape' ? idx % 2 : 0}
         title={el.title}
         text={el.text}
@@ -70,6 +72,7 @@ class App extends Component {
     return (
       <div className="App">
         {sects}
+        <Social></Social>
       </div>
     );
   }
