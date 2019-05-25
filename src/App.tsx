@@ -42,11 +42,10 @@ class App extends Component {
           title="Hey! My name is Seb"
           src="seb.jpg"
           alt="seb">
-          I am an Aerospace Engineer, working to make space accessible to
-          everyone. I studied Aerospace Engineering at
-          the <Link href="https://www.upc.edu/en">Polytechnic University of
-          Catalonia</Link>. During my studies, I moved abroad to learn
-          more about different cultures and approaches to teaching. As an
+          I am an Aerospace Engineer and Software Developer. I studied Aerospace
+          Engineering at the <Link href="https://www.upc.edu/en">Polytechnic
+          University of Catalonia</Link>. During my studies, I moved abroad to
+          learn more about different cultures and approaches to teaching. As an
           Erasmus student, I studied at
           the <Link href="https://www.polimi.it/en/">Polytechnic University of
           Milan</Link>; I later undertook my MSc
@@ -55,7 +54,6 @@ class App extends Component {
         </Section>
         <Section
           order={orient === 'landscape' ? 1 : 0}
-          title=""
           src="coding.jpeg"
           alt="coding">
           I love coding! In parallel to my university studies, I expanded my
@@ -69,16 +67,16 @@ class App extends Component {
         </Section>
         <Section
           order={orient === 'landscape' ? 0 : 0}
-          title=""
           src="climbing.jpeg"
           alt="climbing">
           After completing my studies at Imperial College, I
           joined <Link href="https://open-cosmos.com">Open Cosmos
           Ltd</Link>. There I led the Front End development for the company,
-          focusing on creating an intuitive and robust platform. I am proficient
-          in React and Angular. During my free time, I love doing mountaineering
-          sports. If you want to join me, you’ll probably find me in the
-          mountains.
+          focusing on creating an intuitive and robust platform. Now, I am a
+          Mobile Developer at <Link href="https://www.wetipp.com">WeTipp</Link>.
+          I am proficient in React and Angular. During my free time, I love
+          doing mountaineering sports. If you want to join me, you’ll probably
+          find me in the mountains.
         </Section>
         <Social></Social>
       </div>

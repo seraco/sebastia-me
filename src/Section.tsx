@@ -5,7 +5,7 @@ import Image from './Image';
 
 export interface ISection {
     order: number;
-    title: string;
+    title?: string;
     src: string;
     alt: string;
     children?: any;
