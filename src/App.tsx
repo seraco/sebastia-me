@@ -47,7 +47,7 @@ class App extends Component {
         <Section
           order={orient === 'landscape' ? 0 : 0}
           title="Hey! My name is Seb"
-          src="seb.jpg"
+          src="seb.webp"
           alt="seb">
           I'm a Software Developer and Aerospace Engineer.
           <br /><br />
