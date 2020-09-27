@@ -1,16 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 interface IProps {
     title?: string;
     children?: any;
+    onMouseEnterContent?(): void;
+    onMouseLeaveContent?(): void;
 }
 
-function Text(props: IProps) {
+function Text({ title, children, onMouseEnterContent, onMouseLeaveContent }: IProps) {
     return (
         <div className="Text flex">
-            <div className="text-content">
-                {props.title && <h1 className="title">{props.title}</h1>}
-                <p className="paragraph">{props.children}</p>
+            <div
+                className="text-content"
+                onMouseEnter={onMouseEnterContent}
+                onMouseLeave={onMouseLeaveContent}>
+                {title && <h1 className="title">{title}</h1>}
+                <p className="paragraph">{children}</p>
             </div>
         </div>
     );
