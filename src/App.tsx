@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import Section, { ISection } from './Section';
+import Section from './Section';
 import Social from './Social';
 import Link from './Link';
 
