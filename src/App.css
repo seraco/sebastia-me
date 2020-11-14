@@ -53,6 +53,7 @@
 .title {
   margin-left: 40px;
   margin-right: 40px;
+  font-weight: 900;
 }
 
 .paragraph {
@@ -73,7 +74,7 @@
 
 .logo {
   width: 32px;
-  margin: 12px 15px;
+  margin: 8px 15px;
 }
 
 .Link {
