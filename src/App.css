@@ -64,12 +64,13 @@
 
 .Social {
   background-color: #282c34;
-  position: fixed;
+  position: absolute;
   top: 0px;
   right: 0px;
   padding: 5px;
   display: flex;
   flex-direction: column;
+  border-bottom-left-radius: 10px;
 }
 
 .logo {
