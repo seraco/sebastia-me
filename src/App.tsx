@@ -15,6 +15,7 @@ const links = {
   'open-cosmos': <Link href="https://open-cosmos.com">Open Cosmos</Link>,
   'react': <Link href="https://ca.reactjs.org">React</Link>,
   'wetipp': <Link href="https://www.wetipp.com">WeTipp</Link>,
+  'blog': <Link href="https://sebastia.me" internal>personal blog</Link>,
 };
 
 class App extends Component {
@@ -53,7 +54,8 @@ class App extends Component {
           <br /><br />
           Currently working at {links['corrux']}. Previously,
           at {links['wetipp']} and {links['open-cosmos']}. I maintain
-          the {links['react']} website translation into Catalan.
+          the {links['react']} website translation into Catalan
+          and write a {links['blog']}.
           In my free time, I love climbing, hiking and skiing. If you want
           to find me, I'll probably be in the mountains.
         </Section>

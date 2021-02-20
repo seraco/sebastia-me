@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 interface IProps {
     href: string;
-    children?: any;
+    children?: ReactNode;
+    internal?: boolean;
 }
 
 function Link(props: IProps) {
@@ -10,11 +11,15 @@ function Link(props: IProps) {
         <a
             className="Link"
             href={props.href}
-            target="_blank"
-            rel="noopener noreferrer">
+            target={props.internal ? undefined : '_blank'}
+            rel={props.internal ? undefined : 'noopener noreferrer'}>
             {props.children}
         </a>
     );
 }
+
+Link.defaultProps = {
+    internal: false,
+};
 
 export default Link;
